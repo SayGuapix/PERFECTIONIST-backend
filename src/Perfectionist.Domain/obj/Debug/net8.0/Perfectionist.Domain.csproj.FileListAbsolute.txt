@@ -1,0 +1,11 @@
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\bin\Debug\net8.0\Perfectionist.Domain.deps.json
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\bin\Debug\net8.0\Perfectionist.Domain.dll
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\bin\Debug\net8.0\Perfectionist.Domain.pdb
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.AssemblyInfoInputs.cache
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.AssemblyInfo.cs
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.csproj.CoreCompileInputs.cache
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.dll
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\refint\Perfectionist.Domain.dll
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\Perfectionist.Domain.pdb
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Domain\obj\Debug\net8.0\ref\Perfectionist.Domain.dll

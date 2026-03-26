@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Perfectionist.Domain/1.0.0": {
+        "runtime": {
+          "Perfectionist.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Perfectionist.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
