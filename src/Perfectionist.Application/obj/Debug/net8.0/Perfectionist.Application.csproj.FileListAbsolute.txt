@@ -13,3 +13,4 @@ C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PE
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Application\obj\Debug\net8.0\refint\Perfectionist.Application.dll
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Application\obj\Debug\net8.0\Perfectionist.Application.pdb
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Application\obj\Debug\net8.0\ref\Perfectionist.Application.dll
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Application\obj\Debug\net8.0\Perfectionist.Application.sourcelink.json

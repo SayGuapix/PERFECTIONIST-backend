@@ -17,3 +17,4 @@ C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PE
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Infrastructure\obj\Debug\net8.0\Perfectionist.Infrastructure.pdb
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Infrastructure\obj\Debug\net8.0\Perfectionist.Infrastructure.genruntimeconfig.cache
 C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Infrastructure\obj\Debug\net8.0\ref\Perfectionist.Infrastructure.dll
+C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\src\Perfectionist.Infrastructure\obj\Debug\net8.0\Perfectionist.Infrastructure.sourcelink.json
