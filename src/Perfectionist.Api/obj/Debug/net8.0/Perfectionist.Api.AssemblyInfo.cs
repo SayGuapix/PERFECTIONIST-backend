@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Perfectionist.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+83ffdf85a1071b2d79d0b41f2da3ba15b0a2cadf")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a5b51c2833008379a760fdc3580e3fc7f8546d3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Perfectionist.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Perfectionist.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
