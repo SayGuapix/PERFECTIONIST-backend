@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Perfectionist.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3a5b51c2833008379a760fdc3580e3fc7f8546d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+915d926225258e5aa5a9c09c317d5ec8a812325e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Perfectionist.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Perfectionist.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
