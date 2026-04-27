@@ -1,90 +1,122 @@
-# PERFECTIONIST Backend
+# PERFECTIONIST App
 
-API REST para gestión financiera personal. Backend desarrollado en .NET 8 con Entity Framework Core.
+Proyecto fullstack para gestion financiera personal:
 
-## Tecnologías
+- Backend API REST en .NET 8
+- Frontend movil en React Native + Expo
+
+## Tecnologias
+
+### Backend
 
 - **.NET 8** - Framework principal
 - **Entity Framework Core** - ORM para base de datos
-- **JWT** - Autenticación y autorización
+- **JWT** - Autenticacion y autorizacion
 - **AutoMapper** - Mapeo de objetos
-- **FluentValidation** - Validación de datos
-- **SQL Server** - Base de datos (configurable)
+- **FluentValidation** - Validacion de datos
+- **PostgreSQL** - Base de datos
+
+### Frontend movil
+
+- **React Native + Expo**
+- **Expo Router** - Navegacion
+- **Tamagui** - UI moderna
+- **React Query** - Cache y consumo de datos
+- **Zustand** - Estado global ligero
+- **Axios** - Cliente HTTP
 
 ## Estructura del proyecto
 
-```
+```text
 src/
-├── Perfectionist.Api/          # API REST (capa de presentación)
-├── Perfectionist.Application/  # Lógica de negocio
-├── Perfectionist.Domain/       # Entidades y dominio
-└── Perfectionist.Infrastructure/ # Persistencia y servicios externos
+├── Perfectionist.Api/             # API REST (capa de presentacion)
+├── Perfectionist.Application/     # Logica de negocio
+├── Perfectionist.Domain/          # Entidades y dominio
+└── Perfectionist.Infrastructure/  # Persistencia y servicios externos
+
+mobile/                            # App movil Expo (React Native)
 ```
 
-## Endpoints principales
+## Endpoints principales del backend
 
-- **Autenticación**: `/api/auth`
-- **Categorías**: `/api/categories`
+- **Autenticacion**: `/api/auth`
+- **Categorias**: `/api/categories`
 - **Transacciones**: `/api/transactions`
 - **Metas**: `/api/goals`
 - **Proyectos**: `/api/projects`
 - **Gastos fijos**: `/api/fixed-expenses`
 - **Dashboard**: `/api/dashboard`
 
-## Como compilar y ejecutar
+## Como ejecutar (backend + frontend)
 
 ### Requisitos previos
 
 - .NET 8 SDK instalado
-- SQL Server (o cualquier base de datos compatible con EF Core)
+- PostgreSQL ejecutandose en `localhost:5432`
+- Node.js 20+
+- Expo Go en celular o emulador Android/iOS
 
-### Compilación
-
-```bash
-# Desde la raíz del proyecto
-dotnet build
-```
-
-### Ejecución
+### 1) Levantar backend
 
 ```bash
-# Opción 1: Desde la raíz
-dotnet run --project src/Perfectionist.Api/Perfectionist.Api.csproj
-
-# Opción 2: Navegando al directorio del API
-cd src/Perfectionist.Api
-dotnet run
+dotnet run --project src/Perfectionist.Api/Perfectionist.Api.csproj --launch-profile http
 ```
 
-### URL de acceso
+URLs:
 
-- **API**: http://localhost:5230
-- **Swagger UI**: http://localhost:5230/swagger
+- API: `http://localhost:5230`
+- Swagger: `http://localhost:5230/swagger`
 
-## Pruebas
-
-### Verificar que el servidor está corriendo
+### 2) Levantar frontend movil
 
 ```bash
-curl http://localhost:5230/swagger
+cd mobile
+npm install
+npx expo start --lan --clear
 ```
 
-### Explorar endpoints
+Si tienes problemas de red en celular:
 
-Accede a http://localhost:5230/swagger para ver todos los endpoints disponibles y probarlos directamente desde el navegador.
+```bash
+npx expo start --tunnel --clear
+```
 
-### Pruebas básicas
+### 3) Conectar app movil al backend
 
-1. **Health check**: `GET http://localhost:5230/swagger` (debe devolver HTML de Swagger)
-2. **Documentación**: Visita http://localhost:5230/swagger para ver la documentación completa de la API
+La URL por defecto del frontend esta configurada para emulador Android:
 
-## Configuración
+- `http://10.0.2.2:5230/api`
 
-La configuración principal se encuentra en `src/Perfectionist.Api/appsettings.json` donde puedes modificar:
-- Conexión a base de datos
-- Configuración de JWT
-- Otros parámetros de la aplicación
+Si necesitas cambiarla, ajusta `expo.extra.apiBaseUrl` en `mobile/app.json`.
+
+## Modulos actuales de la app movil
+
+- Autenticacion (login/registro)
+- Dashboard financiero
+- Transacciones
+- Metas y proyectos
+- Perfil y ajustes
+
+## Configuracion
+
+### Backend
+
+La configuracion principal se encuentra en `src/Perfectionist.Api/appsettings.json` donde puedes modificar:
+
+- Conexion a base de datos
+- Configuracion de JWT
+- Otros parametros de la aplicacion
+
+### Frontend movil
+
+La configuracion principal del frontend esta en:
+
+- `mobile/app.json`
+- `mobile/src/config/env.ts`
 
 ## Desarrollo
 
-Para desarrollo, se recomienda usar el perfil "Development" que incluye configuraciones especiales para desarrollo y debugging.
+Para desarrollo se recomienda:
+
+- Backend: perfil `http` (Development)
+- Frontend: `npx expo start --lan --clear`
