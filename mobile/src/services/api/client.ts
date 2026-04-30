@@ -18,9 +18,19 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (!error?.response) {
+      return Promise.reject(
+        new Error(
+          `No se pudo conectar con el servidor (${API_BASE_URL}). Verifica que la API este encendida y accesible.`
+        )
+      );
+    }
+
+    const validationError = error.response.data?.errors?.[0]?.error;
     const message =
       error?.response?.data?.message ??
-      "Ocurrio un error de red o del servidor.";
+      validationError ??
+      `El servidor respondio con error ${error.response.status}.`;
     return Promise.reject(new Error(message));
   }
 );

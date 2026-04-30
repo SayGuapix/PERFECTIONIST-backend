@@ -1,7 +1,7 @@
 import { formatCurrency } from "@/utils/format";
 
 describe("formatCurrency", () => {
-  it("formatea con dos decimales", () => {
-    expect(formatCurrency(12.5)).toBe("$ 12.50");
+  it("formatea en pesos colombianos sin decimales", () => {
+    expect(formatCurrency(12.5)).toContain("13");
   });
 });

@@ -1,9 +1,25 @@
 import { Tabs } from "expo-router";
-import { House, ListChecks, Target, UserRound } from "@tamagui/lucide-icons";
+import { House, ListChecks, Target, UserRound } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
-    <Tabs screenOptions={{ headerShown: false }}>
+    <Tabs
+      screenOptions={{
+        headerShown: false,
+        tabBarActiveTintColor: "#050505",
+        tabBarInactiveTintColor: "#8a8a8a",
+        tabBarStyle: {
+          backgroundColor: "#ffffff",
+          borderTopColor: "#e5e5e5",
+          height: 64,
+          paddingTop: 6,
+        },
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: "700",
+        },
+      }}
+    >
       <Tabs.Screen
         name="dashboard"
         options={{

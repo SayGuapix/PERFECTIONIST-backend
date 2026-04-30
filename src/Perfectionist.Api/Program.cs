@@ -19,6 +19,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Habilita controladores y acceso al contexto http para obtener el usuario logueado
 builder.Services.AddControllers();
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy("DevClient", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 // Carga toda la configuracion de infraestructura (base de datos, repositorios)
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -85,6 +95,7 @@ if (app.Environment.IsDevelopment())
 
 // Orden de seguridad IMPORTANTE: autenticacion primero, despues autorizacion
 app.UseHttpsRedirection();
+app.UseCors("DevClient");
 app.UseAuthentication();
 app.UseAuthorization();
 

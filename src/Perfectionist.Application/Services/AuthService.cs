@@ -34,9 +34,9 @@ public sealed class AuthService : IAuthService
 
         // Valida que el correo no exista ya
         if (await _users.EmailExistsAsync(email, ct))
-            throw new AppException("El correo ya está registrado.", 409);
+            throw new AppException("El correo ya esta registrado.", 409);
 
-        // Hashea contraseña con salt unico
+        // Hashea contrasena con salt unico
         var (hash, salt) = _passwordHasher.Hash(request.Password);
 
         // Crea objeto usuario
@@ -65,15 +65,14 @@ public sealed class AuthService : IAuthService
 
         // Si no existe el usuario devuelve error
         if (user is null)
-            throw new AppException("Credenciales inválidas.", 401);
+            throw new AppException("Credenciales invalidas.", 401);
 
-        // Valida que la contraseña ingresada coincida con el hash guardado
+        // Valida que la contrasena ingresada coincida con el hash guardado
         var ok = _passwordHasher.Verify(request.Password, user.PasswordHash, user.PasswordSalt);
         if (!ok)
-            throw new AppException("Credenciales inválidas.", 401);
+            throw new AppException("Credenciales invalidas.", 401);
 
         // Todo bien, devuelve token
         return new AuthResponse(_jwt.CreateToken(user));
     }
 }
-

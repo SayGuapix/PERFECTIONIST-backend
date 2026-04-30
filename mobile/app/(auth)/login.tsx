@@ -21,8 +21,12 @@ export default function LoginScreen() {
   });
 
   const onSubmit = handleSubmit(async (values) => {
-    await mutation.mutateAsync(values);
-    router.replace("/(tabs)/dashboard");
+    try {
+      await mutation.mutateAsync(values);
+      router.replace("/(tabs)/dashboard");
+    } catch {
+      // React Query exposes the message through mutation.error.
+    }
   });
 
   return (

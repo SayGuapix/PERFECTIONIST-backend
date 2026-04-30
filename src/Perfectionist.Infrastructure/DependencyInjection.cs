@@ -14,6 +14,12 @@ public static class DependencyInjection
     {
         services.AddDbContext<AppDbContext>(opt =>
         {
+            if (config.GetValue<bool>("UseInMemoryDatabase"))
+            {
+                opt.UseInMemoryDatabase("PerfectionistDev");
+                return;
+            }
+
             opt.UseNpgsql(config.GetConnectionString("Default"));
         });
 
