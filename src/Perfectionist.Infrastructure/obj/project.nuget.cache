@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ug074oxXraU=",
+  "dgSpecHash": "+bOZKitNDhg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Infrastructure\\Perfectionist.Infrastructure.csproj",
+  "projectFilePath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Infrastructure\\Perfectionist.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FREDY\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.11\\microsoft.entityframeworkcore.abstractions.8.0.11.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\8.0.11\\microsoft.entityframeworkcore.analyzers.8.0.11.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore.design\\8.0.11\\microsoft.entityframeworkcore.design.8.0.11.nupkg.sha512",
+    "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\8.0.11\\microsoft.entityframeworkcore.inmemory.8.0.11.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\8.0.11\\microsoft.entityframeworkcore.relational.8.0.11.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.1\\microsoft.extensions.caching.memory.8.0.1.nupkg.sha512",

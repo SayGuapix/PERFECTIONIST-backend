@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {}
+    "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {
+    "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj",
+        "projectUniqueName": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj",
         "projectName": "Perfectionist.Domain",
-        "projectPath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj",
+        "projectPath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj",
         "packagesPath": "C:\\Users\\FREDY\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\obj\\",
+        "outputPath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vo41lYjXKUA=",
+  "dgSpecHash": "Hr/tiZXQiKQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
+  "projectFilePath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\FREDY\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\FREDY\\.nuget\\packages\\fluentvalidation\\12.1.1\\fluentvalidation.12.1.1.nupkg.sha512",
