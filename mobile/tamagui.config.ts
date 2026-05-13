@@ -3,7 +3,7 @@ import { config } from "@tamagui/config";
 
 const tamaguiConfig = createTamagui({
   ...config,
-  defaultTheme: "light",
+  defaultTheme: "dark",
   themes: {
     ...config.themes,
     light: {
@@ -15,10 +15,10 @@ const tamaguiConfig = createTamagui({
     },
     dark: {
       ...config.themes.dark,
-      background: "#050505",
-      color: "#ffffff",
-      primary: "#ffffff",
-      secondary: "#a3a3a3",
+      background: "#070b14",
+      color: "#f8fafc",
+      primary: "#34d399",
+      secondary: "#9fb6d8",
     },
   },
 });

@@ -1,0 +1,10 @@
+Starting project at C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\mobile
+Starting Metro Bundler
+warning: Bundler cache is empty, rebuilding (this may take a minute)
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Android .\index.ts ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Android .\index.ts ▓░░░░░░░░░░░░░░░ 11.1% ( 41/184)
+Android .\index.ts ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.0% (606/609)
+Android .\index.ts ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 99.7% (682/683)
+Android Bundled 11529ms index.ts (686 modules)

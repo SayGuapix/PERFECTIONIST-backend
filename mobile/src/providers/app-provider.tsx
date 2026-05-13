@@ -35,8 +35,8 @@ export function AppProvider({ children }: PropsWithChildren) {
   }, []);
 
   return (
-    <TamaguiProvider config={tamaguiConfig as never} defaultTheme="light">
-      <Theme name="light">
+    <TamaguiProvider config={tamaguiConfig as never} defaultTheme="dark">
+      <Theme name="dark">
         <PersistQueryClientProvider
           client={queryClient}
           persistOptions={{ persister }}

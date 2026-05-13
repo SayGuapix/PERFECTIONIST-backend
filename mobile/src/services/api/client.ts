@@ -1,4 +1,5 @@
 import axios from "axios";
+import { router } from "expo-router";
 import { API_BASE_URL } from "@/config/env";
 import { useAuthStore } from "@/store/auth-store";
 
@@ -18,6 +19,11 @@ api.interceptors.request.use((config) => {
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (error?.response?.status === 401) {
+      void useAuthStore.getState().clearSession();
+      router.replace("/(auth)/login");
+    }
+
     if (!error?.response) {
       return Promise.reject(
         new Error(

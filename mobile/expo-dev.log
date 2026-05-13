@@ -1,0 +1,23 @@
+Starting project at C:\Users\FREDY\Desktop\SAY\PASCUAL BRAVO\PROGRAMACION DE DISPOSITIVOS MOVILES\PERFECTIONIST app\mobile
+Starting Metro Bundler
+Waiting on http://localhost:8081
+Logs for your project will appear below.
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ▓▓▓▓▓░░░░░░░░░░░ 32.7% (275/517)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓░░░░░░░░░ 46.7% ( 692/2733)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓░░░░░░░ 58.2% (2181/2858)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+Web node_modules\expo-router\entry.js ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░ 97.7% (3281/3319)
+Web node_modules\expo-router\entry.js ░░░░░░░░░░░░░░░░  0.0% (0/1)
+|  🐥 [tamagui]  [33mnative[0m transactions               ·   44 found   ·   35 opt   ·   12 flat  10715ms 
+Web Bundled 14609ms node_modules\expo-router\entry.js (3344 modules)
+Web Bundled 14645ms node_modules\expo-router\entry.js (1 module)
+Web Bundled 73ms node_modules\expo-router\entry.js (1 module)
+ LOG  [web] Logs will appear in the browser console
+ LOG  [web] Logs will appear in the browser console
+Web Bundled 861ms node_modules\expo-notifications\build\index.js (309 modules)
+Web Bundled 764ms node_modules\expo-notifications\build\index.js (1 module)
+|  🐥 [tamagui]  [33mnative[0m dashboard                  ·   66 found   ·   59 opt   ·   25 flat   147ms 

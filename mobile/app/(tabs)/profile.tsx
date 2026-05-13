@@ -38,14 +38,18 @@ export default function ProfileScreen() {
   const submitFixedExpense = async () => {
     const amount = parseAmount(value);
     if (!name.trim() || amount <= 0) return;
-    await createFixedExpense.mutateAsync({
-      name: name.trim(),
-      value: amount,
-      frequency,
-      nextDate: new Date().toISOString(),
-    });
-    setName("");
-    setValue("");
+    try {
+      await createFixedExpense.mutateAsync({
+        name: name.trim(),
+        value: amount,
+        frequency,
+        nextDate: new Date().toISOString(),
+      });
+      setName("");
+      setValue("");
+    } catch {
+      // La mutacion expone el error en createFixedExpense.error.
+    }
   };
 
   return (

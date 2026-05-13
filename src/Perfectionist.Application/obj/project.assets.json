@@ -557,11 +557,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
+      "projectUniqueName": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
       "projectName": "Perfectionist.Application",
-      "projectPath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
+      "projectPath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\Perfectionist.Application.csproj",
       "packagesPath": "C:\\Users\\FREDY\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\obj\\",
+      "outputPath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -582,8 +582,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {
-              "projectPath": "c:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj"
+            "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj": {
+              "projectPath": "C:\\Users\\FREDY\\Desktop\\SAY\\PASCUAL BRAVO\\PROGRAMACION DE DISPOSITIVOS MOVILES\\PERFECTIONIST app\\src\\Perfectionist.Domain\\Perfectionist.Domain.csproj"
             }
           }
         }
@@ -632,5 +632,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
+    }
+  ]
 }

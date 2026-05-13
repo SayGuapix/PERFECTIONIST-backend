@@ -1,21 +1,22 @@
 import { Tabs } from "expo-router";
-import { House, ListChecks, Target, UserRound } from "lucide-react-native";
+import { Bot, House, UserRound, WalletCards, WalletMinimal } from "lucide-react-native";
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
         headerShown: false,
-        tabBarActiveTintColor: "#050505",
-        tabBarInactiveTintColor: "#8a8a8a",
+        tabBarActiveTintColor: "#34d399",
+        tabBarInactiveTintColor: "#9fb6d8",
         tabBarStyle: {
-          backgroundColor: "#ffffff",
-          borderTopColor: "#e5e5e5",
-          height: 64,
-          paddingTop: 6,
+          backgroundColor: "#0f1726",
+          borderTopColor: "#1d2b44",
+          height: 78,
+          paddingTop: 8,
+          paddingBottom: 10,
         },
         tabBarLabelStyle: {
-          fontSize: 12,
+          fontSize: 11,
           fontWeight: "700",
         },
       }}
@@ -28,17 +29,24 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="transactions"
+        name="goals-projects"
         options={{
-          title: "Movimientos",
-          tabBarIcon: ({ color, size }) => <ListChecks color={color} size={size} />,
+          title: "Espacios",
+          tabBarIcon: ({ color, size }) => <WalletMinimal color={color} size={size} />,
         }}
       />
       <Tabs.Screen
-        name="goals-projects"
+        name="transactions"
         options={{
-          title: "Metas",
-          tabBarIcon: ({ color, size }) => <Target color={color} size={size} />,
+          title: "Movimientos",
+          tabBarIcon: ({ color, size }) => <WalletCards color={color} size={size} />,
+        }}
+      />
+      <Tabs.Screen
+        name="chat"
+        options={{
+          title: "Chat IA",
+          tabBarIcon: ({ color, size }) => <Bot color={color} size={size} />,
         }}
       />
       <Tabs.Screen

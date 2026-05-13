@@ -7,8 +7,8 @@ interface ScreenProps extends PropsWithChildren {
 
 export function Screen({ children, padded = true }: ScreenProps) {
   return (
-    <ScrollView flex={1} backgroundColor="$background">
-      <YStack flex={1} gap="$4" padding={padded ? "$4" : "$0"}>
+    <ScrollView flex={1} backgroundColor="#070b14">
+      <YStack flex={1} gap="$5" padding={padded ? "$5" : "$0"} paddingBottom="$10">
         {children}
       </YStack>
     </ScrollView>
