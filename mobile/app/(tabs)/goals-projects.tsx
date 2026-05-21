@@ -156,11 +156,14 @@ export default function GoalsProjectsScreen() {
               borderWidth={1}
               borderRadius="$6"
               padding="$4"
-              pressStyle={{ scale: 0.99, borderColor: row.color }}
-              onPress={() => setExpandedSpace(isExpanded ? null : row.title)}
             >
               <YStack gap="$4">
-                <XStack alignItems="center" gap="$4">
+                <XStack
+                  alignItems="center"
+                  gap="$4"
+                  pressStyle={{ scale: 0.99 }}
+                  onPress={() => setExpandedSpace(isExpanded ? null : row.title)}
+                >
                   <YStack width={68} height={68} borderRadius={18} alignItems="center" justifyContent="center" backgroundColor={`${row.color}20`}>
                     <Icon color={row.color} size={34} />
                   </YStack>
