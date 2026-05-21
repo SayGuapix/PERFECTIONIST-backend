@@ -32,6 +32,7 @@ export interface Transaction {
 }
 
 export type TransactionType = 1 | 2;
+export type CategoryType = 1 | 2;
 
 export interface CreateTransactionPayload {
   type: TransactionType;
@@ -77,10 +78,12 @@ export interface CreateProjectPayload {
 export interface Category {
   id: string;
   name: string;
+  type: CategoryType;
 }
 
 export interface CreateCategoryPayload {
   name: string;
+  type?: CategoryType;
 }
 
 export type Frequency = 1 | 2 | 3 | 4 | 5;

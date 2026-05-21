@@ -3,6 +3,7 @@ using Perfectionist.Application.Categories.Dtos;
 using Perfectionist.Application.FixedExpenses.Dtos;
 using Perfectionist.Application.Goals.Dtos;
 using Perfectionist.Application.Projects.Dtos;
+using Perfectionist.Domain.Enums;
 
 namespace Perfectionist.Application.Validation;
 
@@ -11,6 +12,7 @@ public sealed class CreateCategoryRequestValidator : AbstractValidator<CreateCat
     public CreateCategoryRequestValidator()
     {
         RuleFor(x => x.Name).NotEmpty().MaximumLength(60);
+        RuleFor(x => x.Type).IsInEnum();
     }
 }
 
@@ -19,6 +21,7 @@ public sealed class UpdateCategoryRequestValidator : AbstractValidator<UpdateCat
     public UpdateCategoryRequestValidator()
     {
         RuleFor(x => x.Name).NotEmpty().MaximumLength(60);
+        RuleFor(x => x.Type).IsInEnum();
     }
 }
 

@@ -66,6 +66,7 @@ export default function GoalsProjectsScreen() {
   const [fixedName, setFixedName] = useState("");
   const [fixedValue, setFixedValue] = useState("");
   const [frequency, setFrequency] = useState<Frequency>(3);
+  const [incomeCategoryName, setIncomeCategoryName] = useState("");
   const [categoryName, setCategoryName] = useState("");
   const [expandedSpace, setExpandedSpace] = useState<string | null>("Metas");
 
@@ -113,8 +114,18 @@ export default function GoalsProjectsScreen() {
   const submitCategory = async () => {
     if (!categoryName.trim()) return;
     try {
-      await createCategory.mutateAsync({ name: categoryName.trim() });
+      await createCategory.mutateAsync({ name: categoryName.trim(), type: 2 });
       setCategoryName("");
+    } catch {
+      // La mutacion expone el error en createCategory.error.
+    }
+  };
+
+  const submitIncomeCategory = async () => {
+    if (!incomeCategoryName.trim()) return;
+    try {
+      await createCategory.mutateAsync({ name: incomeCategoryName.trim(), type: 1 });
+      setIncomeCategoryName("");
     } catch {
       // La mutacion expone el error en createCategory.error.
     }
@@ -125,13 +136,15 @@ export default function GoalsProjectsScreen() {
   }
 
   const fixedTotal = fixedExpenses.data?.reduce((total, item) => total + item.value, 0) ?? 0;
+  const incomeCategories = categories.data?.filter((category) => Number(category.type) === 1) ?? [];
+  const expenseCategories = categories.data?.filter((category) => Number(category.type) === 2) ?? [];
   const spaceRows = [
-    { title: "Ingresos", detail: "Registro y categorizacion de ingresos", count: 1, icon: ReceiptText, color: colors.green },
+    { title: "Ingresos", detail: "Registro y categorizacion de ingresos", count: incomeCategories.length, icon: ReceiptText, color: colors.green },
     { title: "Metas", detail: "Objetivos financieros con fecha limite", count: goals.data?.length ?? 0, icon: Target, color: colors.green },
     { title: "Ahorros", detail: "Cuentas de ahorro personalizadas", count: 0, icon: PiggyBank, color: colors.green },
     { title: "Proyectos", detail: "Proyectos con presupuesto definido", count: projects.data?.length ?? 0, icon: Briefcase, color: colors.blue },
     { title: "Gastos Fijos", detail: "Compromisos recurrentes mensuales", count: fixedExpenses.data?.length ?? 0, icon: ReceiptText, color: colors.orange },
-    { title: "Gastos Casuales", detail: "Gastos del dia a dia por categoria", count: categories.data?.length ?? 0, icon: Coffee, color: colors.red },
+    { title: "Gastos Casuales", detail: "Gastos del dia a dia por categoria", count: expenseCategories.length, icon: Coffee, color: colors.red },
   ];
 
   return (
@@ -180,10 +193,30 @@ export default function GoalsProjectsScreen() {
                 </XStack>
 
                 {isExpanded && row.title === "Ingresos" ? (
-                  <YStack borderTopWidth={1} borderTopColor={colors.border} paddingTop="$4">
-                    <Paragraph color={colors.muted}>
-                      Usa el boton fijo + para registrar ingresos en la cuenta general, una meta o una categoria.
-                    </Paragraph>
+                  <YStack gap="$4" borderTopWidth={1} borderTopColor={colors.border} paddingTop="$4">
+                    <YStack gap="$3">
+                      <Text color={colors.text} fontSize="$6" fontWeight="900">Nueva categoria de ingreso</Text>
+                      <XStack gap="$2">
+                        <Input flex={1} placeholder="Ej. Salario" value={incomeCategoryName} onChangeText={setIncomeCategoryName} placeholderTextColor="$secondary" backgroundColor={colors.bg} borderColor={colors.border} color="$color" />
+                        <Button backgroundColor={colors.green} onPress={submitIncomeCategory}><Text color="#07111f" fontWeight="900">Crear</Text></Button>
+                      </XStack>
+                    </YStack>
+
+                    <XStack gap="$3" flexWrap="wrap">
+                      {incomeCategories.length ? (
+                        incomeCategories.map((category, index) => (
+                          <YStack key={category.id} width="48%" minWidth={150} gap="$3" borderWidth={1} borderColor={colors.border} borderRadius="$5" padding="$4" backgroundColor={colors.bg}>
+                            <XStack alignItems="center" gap="$2">
+                              <YStack width={16} height={16} borderRadius={8} backgroundColor={["#34d399", "#3b82f6", "#14b8a6", "#84cc16"][index % 4]} />
+                              <Text color={colors.text} fontSize="$5" fontWeight="900">{category.name}</Text>
+                            </XStack>
+                            <Paragraph color={colors.muted}>Categoria para ingresos</Paragraph>
+                          </YStack>
+                        ))
+                      ) : (
+                        <Paragraph color={colors.muted}>Crea tu primera categoria de ingreso.</Paragraph>
+                      )}
+                    </XStack>
                   </YStack>
                 ) : null}
 
@@ -325,8 +358,8 @@ export default function GoalsProjectsScreen() {
                     </YStack>
 
                     <XStack gap="$3" flexWrap="wrap">
-                      {categories.data?.length ? (
-                        categories.data.map((category, index) => (
+                      {expenseCategories.length ? (
+                        expenseCategories.map((category, index) => (
                           <YStack key={category.id} width="48%" minWidth={150} gap="$3" borderWidth={1} borderColor={colors.border} borderRadius="$5" padding="$4" backgroundColor={colors.bg}>
                             <XStack alignItems="center" gap="$2">
                               <YStack width={16} height={16} borderRadius={8} backgroundColor={["#ec4899", "#3b82f6", "#f97316", "#65c90f"][index % 4]} />

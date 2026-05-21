@@ -34,6 +34,7 @@ public sealed class TransactionService : ITransactionService
         {
             var category = await _categories.GetAsync(_currentUser.UserId, request.CategoryId.Value, ct);
             if (category is null) throw new AppException("La categoría no existe.", 400);
+            if ((int)category.Type != (int)request.Type) throw new AppException("La categoría no corresponde al tipo de movimiento.", 400);
         }
 
         var entity = new Transaction
@@ -95,6 +96,7 @@ public sealed class TransactionService : ITransactionService
         {
             var category = await _categories.GetAsync(_currentUser.UserId, request.CategoryId.Value, ct);
             if (category is null) throw new AppException("La categoría no existe.", 400);
+            if ((int)category.Type != (int)request.Type) throw new AppException("La categoría no corresponde al tipo de movimiento.", 400);
         }
 
         entity.Type = request.Type;

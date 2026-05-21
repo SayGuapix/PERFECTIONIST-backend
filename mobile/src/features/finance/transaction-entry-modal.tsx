@@ -90,6 +90,11 @@ export function TransactionEntryModal({ visible, onClose }: TransactionEntryModa
     setCategoryName("");
   }, [visible]);
 
+  const categoryOptions = useMemo(() => {
+    if (!type) return [];
+    return (categories.data ?? []).filter((category) => Number(category.type) === Number(type));
+  }, [categories.data, type]);
+
   const targetGroups = useMemo(() => {
     if (!type) return [];
 
@@ -103,8 +108,8 @@ export function TransactionEntryModal({ visible, onClose }: TransactionEntryModa
       },
       {
         kind: "category",
-        title: "Categorias casuales",
-        items: categories.data ?? [],
+        title: type === 1 ? "Categorias de ingresos" : "Categorias casuales",
+        items: categoryOptions,
         icon: FolderOpen,
         color: colors.blue,
       },
@@ -138,7 +143,7 @@ export function TransactionEntryModal({ visible, onClose }: TransactionEntryModa
     }
 
     return groups;
-  }, [categories.data, fixedExpenses.data, goals.data, projects.data, type]);
+  }, [categoryOptions, fixedExpenses.data, goals.data, projects.data, type]);
 
   const selectType = (nextType: TransactionType) => {
     setType(nextType);
@@ -154,7 +159,7 @@ export function TransactionEntryModal({ visible, onClose }: TransactionEntryModa
   const submitCategory = async () => {
     if (!categoryName.trim()) return;
     try {
-      const created = await createCategory.mutateAsync({ name: categoryName.trim() });
+      const created = await createCategory.mutateAsync({ name: categoryName.trim(), type: type ?? 2 });
       setTargetKind("category");
       setTargetId(created.id);
       setCategoryName("");
@@ -272,7 +277,7 @@ export function TransactionEntryModal({ visible, onClose }: TransactionEntryModa
                     </YStack>
 
                     <XStack gap="$2">
-                      <Input flex={1} placeholder="Nueva categoria" value={categoryName} onChangeText={setCategoryName} placeholderTextColor="$secondary" backgroundColor={colors.bg} borderColor={colors.border} color="$color" />
+                      <Input flex={1} placeholder={type === 1 ? "Nueva categoria de ingreso" : "Nueva categoria casual"} value={categoryName} onChangeText={setCategoryName} placeholderTextColor="$secondary" backgroundColor={colors.bg} borderColor={colors.border} color="$color" />
                       <Button backgroundColor={colors.mutedPanel} onPress={submitCategory} disabled={createCategory.isPending}>
                         <Text color={colors.text}>{createCategory.isPending ? "..." : "Crear"}</Text>
                       </Button>

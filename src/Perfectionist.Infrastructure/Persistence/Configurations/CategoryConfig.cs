@@ -11,9 +11,10 @@ public sealed class CategoryConfig : IEntityTypeConfiguration<Category>
         builder.HasKey(x => x.Id);
 
         builder.Property(x => x.Name).IsRequired().HasMaxLength(60);
+        builder.Property(x => x.Type).IsRequired();
         builder.Property(x => x.CreatedAtUtc).IsRequired();
 
-        builder.HasIndex(x => new { x.UserId, x.Name }).IsUnique();
+        builder.HasIndex(x => new { x.UserId, x.Type, x.Name }).IsUnique();
 
         builder.HasOne(x => x.User)
             .WithMany(x => x.Categories)

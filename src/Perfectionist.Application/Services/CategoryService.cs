@@ -28,6 +28,7 @@ public sealed class CategoryService : ICategoryService
             Id = Guid.NewGuid(),
             UserId = _currentUser.UserId,
             Name = request.Name.Trim(),
+            Type = request.Type,
             CreatedAtUtc = DateTimeOffset.UtcNow
         };
 
@@ -49,6 +50,7 @@ public sealed class CategoryService : ICategoryService
         if (category is null) return null;
 
         category.Name = request.Name.Trim();
+        category.Type = request.Type;
         category.UpdatedAtUtc = DateTimeOffset.UtcNow;
 
         await _uow.SaveChangesAsync(ct);
