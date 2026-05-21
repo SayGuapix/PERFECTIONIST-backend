@@ -1,122 +1,144 @@
 # PERFECTIONIST App
 
-Proyecto fullstack para gestion financiera personal:
+Proyecto fullstack para gestion financiera personal.
 
 - Backend API REST en .NET 8
-- Frontend movil en React Native + Expo
+- Frontend movil/web en React Native + Expo
+- Base de datos PostgreSQL
 
-## Tecnologias
+## Requisitos
 
-### Backend
+- .NET 8 SDK
+- Node.js 20 o superior
+- PostgreSQL en `localhost:5432`
+- Expo Go en el celular, o un emulador Android/iOS
 
-- **.NET 8** - Framework principal
-- **Entity Framework Core** - ORM para base de datos
-- **JWT** - Autenticacion y autorizacion
-- **AutoMapper** - Mapeo de objetos
-- **FluentValidation** - Validacion de datos
-- **PostgreSQL** - Base de datos
-
-### Frontend movil
-
-- **React Native + Expo**
-- **Expo Router** - Navegacion
-- **Tamagui** - UI moderna
-- **React Query** - Cache y consumo de datos
-- **Zustand** - Estado global ligero
-- **Axios** - Cliente HTTP
-
-## Estructura del proyecto
+La conexion por defecto de PostgreSQL esta en:
 
 ```text
-src/
-├── Perfectionist.Api/             # API REST (capa de presentacion)
-├── Perfectionist.Application/     # Logica de negocio
-├── Perfectionist.Domain/          # Entidades y dominio
-└── Perfectionist.Infrastructure/  # Persistencia y servicios externos
-
-mobile/                            # App movil Expo (React Native)
+src/Perfectionist.Api/appsettings.json
 ```
 
-## Endpoints principales del backend
+Por defecto usa:
 
-- **Autenticacion**: `/api/auth`
-- **Categorias**: `/api/categories`
-- **Transacciones**: `/api/transactions`
-- **Metas**: `/api/goals`
-- **Proyectos**: `/api/projects`
-- **Gastos fijos**: `/api/fixed-expenses`
-- **Dashboard**: `/api/dashboard`
+```text
+Host=localhost;Port=5432;Database=perfectionist;Username=postgres;Password=postgres
+```
 
-## Como ejecutar (backend + frontend)
+## Inicio rapido
 
-### Requisitos previos
+Abre dos terminales desde la raiz del proyecto.
 
-- .NET 8 SDK instalado
-- PostgreSQL ejecutandose en `localhost:5432`
-- Node.js 20+
-- Expo Go en celular o emulador Android/iOS
-
-### 1) Levantar backend
+### Terminal 1: backend
 
 ```bash
 dotnet run --project src/Perfectionist.Api/Perfectionist.Api.csproj --launch-profile http
 ```
 
-URLs:
+La API queda disponible en:
 
-- API: `http://localhost:5230`
+- PC local: `http://localhost:5230`
+- Celular en la misma red Wi-Fi: `http://TU_IP_LOCAL:5230`
 - Swagger: `http://localhost:5230/swagger`
 
-### 2) Levantar frontend movil
+El perfil `http` escucha en `0.0.0.0:5230`, por eso Expo Go puede llamar la API desde otro dispositivo de la misma red.
+
+### Terminal 2: frontend
+
+La primera vez instala dependencias:
 
 ```bash
 cd mobile
 npm install
+```
+
+Luego inicia Expo:
+
+```bash
 npx expo start --lan --clear
 ```
 
-Si tienes problemas de red en celular:
+Escanea el QR con Expo Go. Si el celular no logra abrir la app por restricciones de red, usa tunnel:
 
 ```bash
 npx expo start --tunnel --clear
 ```
 
-### 3) Conectar app movil al backend
+Para abrir en navegador:
 
-La URL por defecto del frontend esta configurada para emulador Android:
+```bash
+npx expo start --web --clear
+```
 
-- `http://10.0.2.2:5230/api`
+## Como se conecta el frontend con la API
 
-Si necesitas cambiarla, ajusta `expo.extra.apiBaseUrl` en `mobile/app.json`.
+La app calcula la URL automaticamente en `mobile/src/config/env.ts`:
 
-## Modulos actuales de la app movil
+- Web usa `http://localhost:5230/api`.
+- Expo Go en celular usa la IP LAN que Expo detecta, por ejemplo `http://192.168.1.19:5230/api`.
+- Emulador Android, si Expo no entrega una IP LAN, usa `http://10.0.2.2:5230/api`.
 
-- Autenticacion (login/registro)
-- Dashboard financiero
-- Transacciones
-- Metas y proyectos
-- Perfil y ajustes
+Normalmente no necesitas editar `mobile/app.json`.
 
-## Configuracion
+Solo define `expo.extra.apiBaseUrl` si quieres forzar manualmente una URL especifica:
 
-### Backend
+```json
+{
+  "expo": {
+    "extra": {
+      "apiBaseUrl": "http://TU_IP_LOCAL:5230/api"
+    }
+  }
+}
+```
 
-La configuracion principal se encuentra en `src/Perfectionist.Api/appsettings.json` donde puedes modificar:
+No dejes una IP fija antigua en `app.json`, porque cambia cuando cambias de red y rompe web o Expo Go.
 
-- Conexion a base de datos
-- Configuracion de JWT
-- Otros parametros de la aplicacion
+## Si aparece "No se pudo conectar con el servidor"
 
-### Frontend movil
+Revisa en este orden:
 
-La configuracion principal del frontend esta en:
+1. El backend debe estar corriendo con el perfil `http`.
+2. Swagger debe abrir en `http://localhost:5230/swagger`.
+3. PC y celular deben estar en la misma red Wi-Fi si usas `--lan`.
+4. Windows Firewall debe permitir conexiones entrantes a .NET en el puerto `5230`.
+5. Si la red bloquea LAN, inicia Expo con `npx expo start --tunnel --clear`.
 
-- `mobile/app.json`
-- `mobile/src/config/env.ts`
+## Si Expo Go muestra "Something went wrong"
 
-## Desarrollo
+Prueba este arranque limpio:
 
-Para desarrollo se recomienda:
+```bash
+cd mobile
+npx expo start --lan --clear
+```
 
-- Backend: perfil `http` (Development)
-- Frontend: `npx expo start --lan --clear`
+Si sigue fallando:
+
+```bash
+npx expo-doctor
+npx tsc --noEmit
+npm run lint
+```
+
+## Endpoints principales
+
+- Autenticacion: `/api/auth`
+- Categorias: `/api/categories`
+- Transacciones: `/api/transactions`
+- Metas: `/api/goals`
+- Proyectos: `/api/projects`
+- Gastos fijos: `/api/fixed-expenses`
+- Dashboard: `/api/dashboard`
+
+## Estructura
+
+```text
+src/
+  Perfectionist.Api/             API REST
+  Perfectionist.Application/     Logica de negocio
+  Perfectionist.Domain/          Entidades y dominio
+  Perfectionist.Infrastructure/  Persistencia y servicios externos
+
+mobile/                          App Expo
+```

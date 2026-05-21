@@ -1,6 +1,7 @@
 using System.Text;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Perfectionist.Api.Auth;
@@ -15,6 +16,22 @@ using Perfectionist.Infrastructure.Security;
 // PUNTO DE ENTRADA DE LA API
 // Aqui se configura TODO lo que necesita la aplicacion para arrancar
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
+
+if (builder.Environment.IsDevelopment())
+{
+    var dataProtectionKeysPath = Path.Combine(
+        builder.Environment.ContentRootPath,
+        "App_Data",
+        "DataProtectionKeys");
+
+    Directory.CreateDirectory(dataProtectionKeysPath);
+    builder.Services
+        .AddDataProtection()
+        .PersistKeysToFileSystem(new DirectoryInfo(dataProtectionKeysPath));
+}
 
 // Habilita controladores y acceso al contexto http para obtener el usuario logueado
 builder.Services.AddControllers();

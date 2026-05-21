@@ -129,6 +129,15 @@ export function useDeleteProjectMutation() {
   });
 }
 
+export function useLinkTransactionToProjectMutation() {
+  const invalidate = useInvalidateFinance();
+  return useMutation({
+    mutationFn: ({ projectId, transactionId }: { projectId: string; transactionId: string }) =>
+      financeService.linkTransactionToProject(projectId, transactionId),
+    onSuccess: invalidate,
+  });
+}
+
 export function useFixedExpensesQuery() {
   return useQuery({
     queryKey: ["fixed-expenses"],

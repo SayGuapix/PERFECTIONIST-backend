@@ -64,6 +64,9 @@ export const financeService = {
   deleteProject: async (id: string) => {
     await api.delete(`/projects/${id}`);
   },
+  linkTransactionToProject: async (projectId: string, transactionId: string) => {
+    await api.post(`/projects/${projectId}/link`, { transactionId });
+  },
   getFixedExpenses: async () => {
     const { data } = await api.get<FixedExpense[]>("/fixed-expenses");
     return data;

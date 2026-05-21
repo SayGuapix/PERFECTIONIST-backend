@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { ActivityIndicator, Modal, Pressable } from "react-native";
+import { ActivityIndicator } from "react-native";
 import { router } from "expo-router";
 import {
   ArrowDownLeft,
@@ -8,14 +7,11 @@ import {
   Coffee,
   Moon,
   PiggyBank,
-  Plus,
   ReceiptText,
   Target,
   TrendingUp,
-  WalletMinimal,
-  X,
 } from "lucide-react-native";
-import { Button, Card, Paragraph, Progress, Text, XStack, YStack } from "tamagui";
+import { Card, Paragraph, Progress, Text, XStack, YStack } from "tamagui";
 import { useDashboardQuery } from "@/features/finance/hooks";
 import { Screen } from "@/ui/components/screen";
 import { useAuthStore } from "@/store/auth-store";
@@ -40,7 +36,6 @@ function transactionLabel(type: number | string) {
 export default function DashboardScreen() {
   const { data, isPending, error } = useDashboardQuery();
   const name = useAuthStore((state) => state.name) ?? "SweetMask";
-  const [quickOpen, setQuickOpen] = useState(false);
 
   if (isPending) {
     return (
@@ -236,67 +231,6 @@ export default function DashboardScreen() {
         </YStack>
       </Screen>
 
-      <Button
-        position="absolute"
-        right="$5"
-        bottom="$8"
-        width={78}
-        height={78}
-        circular
-        backgroundColor={colors.green}
-        pressStyle={{ scale: 0.96, backgroundColor: colors.green }}
-        onPress={() => setQuickOpen(true)}
-      >
-        <Plus color="#07111f" size={30} />
-      </Button>
-
-      <Modal transparent visible={quickOpen} animationType="fade" onRequestClose={() => setQuickOpen(false)}>
-        <Pressable style={{ flex: 1, backgroundColor: "rgba(0, 0, 0, 0.82)", justifyContent: "center", padding: 28 }} onPress={() => setQuickOpen(false)}>
-          <Pressable>
-            <Card backgroundColor={colors.panel} borderColor={colors.border} borderWidth={1} borderRadius="$6" padding="$5">
-              <YStack gap="$5">
-                <XStack justifyContent="space-between" alignItems="center">
-                  <Text color={colors.text} fontSize="$7" fontWeight="900" flex={1} textAlign="center">
-                    Nueva Transaccion
-                  </Text>
-                  <X color={colors.text} size={24} onPress={() => setQuickOpen(false)} />
-                </XStack>
-                <XStack gap="$3">
-                  {[
-                    { label: "Ingreso", icon: ArrowDownLeft, color: colors.green },
-                    { label: "Gasto", icon: ArrowUpRight, color: colors.red },
-                    { label: "Transferir", icon: WalletMinimal, color: colors.blue },
-                  ].map((item) => {
-                    const Icon = item.icon;
-                    return (
-                      <Button
-                        key={item.label}
-                        flex={1}
-                        height={134}
-                        backgroundColor={colors.bg}
-                        borderWidth={1}
-                        borderColor={item.label === "Ingreso" ? colors.green : colors.border}
-                        borderRadius="$5"
-                        onPress={() => {
-                          setQuickOpen(false);
-                          router.push("/(tabs)/transactions");
-                        }}
-                      >
-                        <YStack alignItems="center" gap="$3">
-                          <Icon color={item.color} size={24} />
-                          <Text color={colors.text} fontWeight="900">
-                            {item.label}
-                          </Text>
-                        </YStack>
-                      </Button>
-                    );
-                  })}
-                </XStack>
-              </YStack>
-            </Card>
-          </Pressable>
-        </Pressable>
-      </Modal>
     </>
   );
 }
